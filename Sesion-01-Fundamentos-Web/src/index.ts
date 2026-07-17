@@ -13,7 +13,6 @@
 // ---------------------------------------------------------------------------
 // Tipos
 // ---------------------------------------------------------------------------
-
 /** Resultado de analizar una URL. */
 export interface UrlParts {
   /** Protocolo tal como lo devuelve la WHATWG URL, p. ej. "https:". */
@@ -27,7 +26,6 @@ export interface UrlParts {
   /** Lista de pares [clave, valor] de los query params. */
   query: Array<[string, string]>;
 }
-
 /** Categoría de un código de estado HTTP. */
 export type StatusCategory =
   | "1xx Informativo"
@@ -61,8 +59,14 @@ export type Headers = Record<string, string>;
  * que lo manejes aparte, se propagará solo.
  */
 export function parseUrl(url: string): UrlParts {
-  // TODO: tu implementación aquí
-  throw new Error("Not implemented");
+  const u = new URL(url);
+  return {
+    protocol: u.protocol,
+    host: u.host,
+    pathname: u.pathname,
+    search: u.search,
+    query: Array.from(u.searchParams.entries()),
+  };
 }
 
 /**
