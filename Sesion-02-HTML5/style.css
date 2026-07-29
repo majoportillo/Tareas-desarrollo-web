@@ -1,0 +1,142 @@
+/* ===== Reseñas Literarias — estilos base ===== */
+:root {
+  --color1: #B9E7A8; /* verde claro */
+  --color2: #C1DDA0; /* verde menta */
+  --color3: #C1B57D; /* dorado/khaki */
+  --color4: #F0C3D9; /* rosa */
+  --color5: #92CCAD; /* verde azulado */
+
+  --oscuro: #33402f;   /* texto/contraste, derivado de la paleta */
+  --fondo: #fbfaf5;    /* fondo neutro claro para que resalten los colores */
+  --linea: var(--color2);
+
+  font-family: "Georgia", "Iowan Old Style", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--oscuro);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--color3);
+  color: var(--oscuro);
+  padding: 1.2rem 1.5rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--oscuro);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
+nav a:hover, nav a:focus {
+  border-bottom-color: var(--color4);
+}
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+article, section {
+  margin-bottom: 2.2rem;
+}
+
+h2 {
+  color: var(--oscuro);
+  border-bottom: 2px solid var(--color5);
+  padding-bottom: 0.4rem;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 0.8rem 0;
+  border: 3px solid var(--color1);
+}
+
+ul, ol {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+th {
+  background: var(--color2);
+  color: var(--oscuro);
+}
+
+tr:hover td {
+  background: var(--color4);
+}
+
+footer {
+  background: var(--color5);
+  color: var(--oscuro);
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+}
+
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "imagen titulo"
+    "imagen texto";
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.img-container   { grid-area: imagen; }
+.texttitle-container { grid-area: titulo; margin: 0; }
+.text-container  { grid-area: texto; }
+
+@media (max-width: 600px) {
+  article {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "imagen"
+      "titulo"
+      "texto";
+  }
+}

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chisme &amp; Literario — Reseñas</title>
+  <title>Reseñas Literarias — Reseñas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Chisme &amp; Literario</h1>
+    <h1>Reseñas Literarias</h1>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -21,26 +21,62 @@
   </header>
 
   <main>
+    <div class="container">
     <article>
-      <h2>Reseña: Quedará el amor — Alice Kellen</h2>
-      <p>
+      <h2 class="texttitle-container">Reseña: Quedará el amor — Alice Kellen</h2>
+      <img
+        src="https://i.pinimg.com/736x/bc/28/70/bc2870baff29ff945d975f251469ceed.jpg"
+        class="img-container"
+        alt="Portada ilustrativa del libro Quedará el amor de Alice Kellen"
+        loading="lazy">
+      <p class="text-container">
         Una historia que te deja pensando si el amor de verdad alcanza para
-        sostener todo lo demás. La escritura de Kellen es cercana y el ritmo
-        se siente como una tarde lenta de café.
+        sostener todo lo demás. La escritura de Kellen es cercana, el ritmo entre el pasado y el presente
+        se sienten como una maquina del tiempo.
       </p>
     </article>
 
     <section>
-      <h2>Mi historial de lecturas</h2>
-      <p>
-        Acá voy a ir llevando el registro de todo lo que leo, con rating y
-        comentarios cortos de cada libro.
+      <h2 class="texttitle-container">Mi historial de lecturas</h2>
+      <p class="text-container">
+        Algunas lecturas que he leido y reseñado en el blog, con su respectivo rating durante el año.
       </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Portada</th>
+            <th>Libro</th>
+            <th>Autor(a)</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://i.pinimg.com/736x/bc/28/70/bc2870baff29ff945d975f251469ceed.jpg" class="img-container" alt="Portada de Quedará el amor" loading="lazy"></td>
+            <td>Quedará el amor</td>
+            <td>Alice Kellen</td>
+            <td>⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><img src="https://i.pinimg.com/1200x/81/f9/3c/81f93cd85fc062c05fcad440cc88f2c6.jpg" class="img-container" alt="Portada de La clase de griego" loading="lazy"></td>
+            <td>La clase de griego</td>
+            <td>Han Kang</td>
+            <td>⭐⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><img src="https://i.pinimg.com/736x/2e/b7/7d/2eb77d014b2c3f401364606e0ee5fd03.jpg" class="img-container" alt="Portada de Ojalá nunca lo leas" loading="lazy"></td>
+            <td>Ojalá nunca lo leas</td>
+            <td>Ann Liang</td>
+            <td>⭐⭐⭐⭐⭐</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Chisme &amp; Literario · Hecho con HTML semántico</p>
+    <p>&copy; 2026 Reseñas Literarias · Hecho con HTML semántico</p>
   </footer>
 
 </body>
