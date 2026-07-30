@@ -20,7 +20,6 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <div class="cointainer">
     <article>
@@ -35,20 +34,36 @@
         reseñas de libros, recomendaciones de lectura, y tips para 
         disfrutar de tus lecturas.
       </p>
+      <button class="btn" command="show-modal" commandfor="dialogBienvenida">
+        Ver mensaje de bienvenida
+      </button>
+
+      <dialog id="dialogBienvenida">
+        <h2>¡Hola!</h2>
+        <p>Gracias por visitar mi blog. Espero que encuentres tu próxima lectura favorita por acá.</p>
+        <button class="btn" command="close" commandfor="dialogBienvenida">Cerrar</button>
+      </dialog>
     </article>
 
     <section>
       <h2 class="texttitle-container">Últimos temas en el blog</h2>
       <p class="text-container">
-        Reseña de <a href="resenas.html"><em>Quedará el amor</em></a> de Alice Kellen, cómo armar tu
+        Reseña de <em>Quedará el amor</em> de Alice Kellen, cómo armar tu
         setup de lectura, y mucho más. ¡No te lo pierdas!
+        <button class="btn btn-secundario" popovertarget="tipPopover">
+          Dato curioso
+        </button>
       </p>
+
+      <!-- Popover API -->
+      <div id="tipPopover" popover>
+        <p>Leo en promedio 3 libros al mes 📖</p>
+      </div>
     </section>
     </div>
     </main>
   <footer>
     <p>&copy; 2026 Reseñas Literarias · Hecho con HTML semántico</p>
   </footer>
-
 </body>
 </html>

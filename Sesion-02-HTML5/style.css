@@ -140,3 +140,62 @@ article {
       "texto";
   }
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 420px;
+}
+ 
+label { font-weight: bold; }
+ 
+input, textarea {
+  padding: 0.6rem;
+  border: 1px solid var(--color2);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color5);
+  color: var(--oscuro);
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+ 
+.btn:hover { background: var(--color3); }
+ 
+.btn-secundario {
+  background: transparent;
+  border: 1px solid var(--color5);
+  color: var(--oscuro);
+}
+
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 380px;
+  font-family: inherit;
+  border-top: 6px solid var(--color4);
+}
+ 
+dialog::backdrop {
+  background: rgba(51, 64, 47, 0.5);
+}
+ 
+[popover] {
+  border: 2px solid var(--color4);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  max-width: 280px;
+  font-size: 0.95rem;
+  background: var(--fondo);
+}

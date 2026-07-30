@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reseñas Literarias — Contacto</title>
+  <link rel="icon" href="https://i.pinimg.com/736x/00/c6/49/00c64981df361af3f782819f3bebf72a.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,14 +25,38 @@
     <article>
       <h2>Escríbeme</h2>
       <p>
-        ¿Tenés una recomendación de libro o querés colaborar? Más adelante
-        vas a poder dejarme tu mensaje directo en las siguientes redes sociales.
-        <a href="https://www.instagram.com/tu_usuario" target="_blank">Instagram</a>,
-        <a href="https://www.facebook.com/tu_usuario" target="_blank">Facebook</a>, y
-        <a href="https://twitter.com/tu_usuario" target="_blank">Twitter</a>.
-        <a href="https://www.goodreads.com/user/show/123456-tu-usuario" target="_blank">Goodreads</a>
+        ¿Tenés una recomendación de libro o querés colaborar? Dejame tu
+        mensaje por acá.
       </p>
+
+      <form>
+        <div>
+          <label for="nombre">Nombre</label><br>
+          <input type="text" id="nombre" name="nombre" required minlength="2" placeholder="Tu nombre">
+        </div>
+
+        <div>
+          <label for="correo">Correo</label><br>
+          <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
+        </div>
+
+        <div>
+          <label for="mensaje">Mensaje</label><br>
+          <textarea id="mensaje" name="mensaje" rows="4" required minlength="10" placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Enviar mensaje</button>
+      </form>
     </article>
+
+    <section>
+      <h2>Sígueme</h2>
+      <p>
+        También podés encontrarme en
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+        compartiendo lecturas.
+      </p>
+    </section>
   </main>
 
   <footer>
