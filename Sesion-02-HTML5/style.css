@@ -1,13 +1,12 @@
-/* ===== Reseñas Literarias — estilos base ===== */
 :root {
-  --color1: #B9E7A8; /* verde claro */
-  --color2: #C1DDA0; /* verde menta */
-  --color3: #C1B57D; /* dorado/khaki */
-  --color4: #F0C3D9; /* rosa */
-  --color5: #92CCAD; /* verde azulado */
+  --color1: #B9E7A8;
+  --color2: #C1DDA0; 
+  --color3: #C1B57D; 
+  --color4: #F0C3D9; 
+  --color5: #92CCAD; 
 
-  --oscuro: #33402f;   /* texto/contraste, derivado de la paleta */
-  --fondo: #fbfaf5;    /* fondo neutro claro para que resalten los colores */
+  --oscuro: #33402f; 
+  --fondo: #fbfaf5; 
   --linea: var(--color2);
 
   font-family: "Georgia", "Iowan Old Style", serif;
@@ -20,6 +19,40 @@ body {
   background: var(--fondo);
   color: var(--oscuro);
   line-height: 1.6;
+}
+
+/* Accesibilidad */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color4);
+  color: var(--oscuro);
+  padding: 0.7rem 1.2rem;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color4);
+  outline-offset: 2px;
 }
 
 header {
@@ -52,6 +85,10 @@ nav a {
 }
 
 nav a:hover, nav a:focus {
+  border-bottom-color: var(--color4);
+}
+
+nav a[aria-current="page"] {
   border-bottom-color: var(--color4);
 }
 
@@ -108,6 +145,12 @@ tr:hover td {
   background: var(--color4);
 }
 
+table img {
+  width: 60px;
+  border-width: 2px;
+  margin: 0;
+}
+
 footer {
   background: var(--color5);
   color: var(--oscuro);
@@ -115,7 +158,6 @@ footer {
   padding: 1.2rem;
   font-size: 0.9rem;
 }
-
 
 article {
   display: grid;
@@ -147,9 +189,9 @@ form {
   gap: 0.9rem;
   max-width: 420px;
 }
- 
+
 label { font-weight: bold; }
- 
+
 input, textarea {
   padding: 0.6rem;
   border: 1px solid var(--color2);
@@ -169,9 +211,9 @@ input, textarea {
   font-size: 0.95rem;
   font-weight: bold;
 }
- 
+
 .btn:hover { background: var(--color3); }
- 
+
 .btn-secundario {
   background: transparent;
   border: 1px solid var(--color5);
@@ -186,11 +228,11 @@ dialog {
   font-family: inherit;
   border-top: 6px solid var(--color4);
 }
- 
+
 dialog::backdrop {
   background: rgba(51, 64, 47, 0.5);
 }
- 
+
 [popover] {
   border: 2px solid var(--color4);
   border-radius: 8px;
