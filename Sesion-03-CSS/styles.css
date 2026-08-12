@@ -29,9 +29,20 @@ h2 {
   margin: 2rem 0 1rem;
 }
 
-/* TODO: Galería de productos */
-/* Desktop (>=1024px): 3 columnas usando CSS Grid */
-/* Mobile (<768px): 1 columna con scroll vertical */
+/* Galería de productos */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Desktop (>=1024px): 3 columnas */
+@media (min-width: 1024px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Estilo de cada tarjeta de producto */
 .producto {
   background-color: #fff;
@@ -82,11 +93,43 @@ h2 {
 .btn-comprar:hover {
   background-color: #1f5a1f;
 }
-/* TODO: To-Do List */
-/* - Lista sin marcadores (list-style: none) */
-/* - Checkbox con label accesible */
-/* - Tareas alternadas con color de fondo (zebra striping) */
 
+
+/* To-Do List */
+.todo-list {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tareas {
+  list-style: none;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.tarea:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.tarea input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.tarea label {
+  cursor: pointer;
+  font-size: 1rem;
+}
 /* TODO: Diseño responsivo */
 /* - Usar @media queries para cambiar entre mobile y desktop */
 /* - La galería debe ser responsiva usando Grid + media queries */
