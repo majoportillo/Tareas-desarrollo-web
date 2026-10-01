@@ -33,9 +33,10 @@ export class RepositorioAlumnos {
      * Devuelve todos los alumnos.
      * @returns {Alumno[]}
      */
+
     listar() {
-        throw new Error('TODO: implementar RepositorioAlumnos.listar()');
-    }
+    return [...this.alumnos];
+}
 
     /**
      * Busca un alumno por id.
@@ -43,8 +44,8 @@ export class RepositorioAlumnos {
      * @returns {Alumno | undefined}
      */
     obtener(id) {
-        throw new Error('TODO: implementar RepositorioAlumnos.obtener()');
-    }
+    return this.alumnos.find((alumno) => alumno.id === id);
+}
 
     /**
      * Crea un alumno nuevo. El id lo genera el repositorio (`a-1`, `a-2`, ...).
@@ -52,7 +53,13 @@ export class RepositorioAlumnos {
      * @returns {Alumno}
      */
     crear(datos) {
-        throw new Error('TODO: implementar RepositorioAlumnos.crear()');
+    const nuevoAlumno = {
+        id: `a-${this.siguienteId++}`,
+        ...datos,
+    };
+
+    this.alumnos.push(nuevoAlumno);
+    return nuevoAlumno;
     }
 
     /**
@@ -62,8 +69,15 @@ export class RepositorioAlumnos {
      * @returns {Alumno | undefined} el alumno actualizado, o undefined si no existe
      */
     actualizar(id, datos) {
-        throw new Error('TODO: implementar RepositorioAlumnos.actualizar()');
+    const alumno = this.obtener(id);
+
+    if (!alumno) {
+        return undefined;
     }
+
+    Object.assign(alumno, datos);
+    return alumno;
+}
 
     /**
      * Elimina un alumno por id.
@@ -71,6 +85,8 @@ export class RepositorioAlumnos {
      * @returns {boolean} true si lo eliminó, false si no existía
      */
     eliminar(id) {
-        throw new Error('TODO: implementar RepositorioAlumnos.eliminar()');
-    }
+    const cantidadAntes = this.alumnos.length;
+    this.alumnos = this.alumnos.filter((alumno) => alumno.id !== id);
+    return this.alumnos.length < cantidadAntes;
+}
 }
